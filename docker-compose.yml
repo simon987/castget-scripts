@@ -1,0 +1,11 @@
+version: "3"
+
+services:
+  castget:
+    build:
+      context: .
+    container_name: castget
+    volumes:
+      - ./config:/home/castget/.castget/
+      - ./podcasts:/podcasts
+      - ./podcasts_transcoded:/podcasts_transcoded
