@@ -11,7 +11,7 @@ def convert(mp3_filename, out_filename, bitrate):
     os.makedirs(os.path.split(out_filename)[0], exist_ok=True)
 
     subprocess.run([
-        "ffmpeg",
+        "ffmpeg", "-y",
         "-i", mp3_filename,
         "-b:a", bitrate,
         out_filename,
