@@ -10,6 +10,7 @@ do
 	mkdir $dir -p &>/dev/null
 done
 
-castget -p --rcfile "${CONFIG_FILE}"
+castget -p --resume --rcfile "${CONFIG_FILE}"
 
 python3 transcode.py --mp3-dir /podcasts/ --out-dir /podcasts_transcoded/ --bitrate 18k
+python3 keep_last_n.py --in-dir /podcasts_transcoded/ --out-dir /podcasts_shared/ -n 32
